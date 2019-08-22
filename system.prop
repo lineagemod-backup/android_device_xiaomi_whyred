@@ -26,12 +26,17 @@ ro.telephony.default_network=22,20
 persist.radio.aosp_usr_pref_sel=true
 
 debug.sf.enable_hwc_vds=1
+debug.sf.early_app_phase_offset_ns=1500000
+debug.sf.early_gl_phase_offset_ns=3000000
+debug.sf.early_gl_app_phase_offset_ns=15000000
+debug.sf.early_phase_offset_ns=1500000
 debug.sf.hw=1
 debug.sf.latch_unsignaled=1
 debug.gralloc.enable_fb_ubwc=1
 dalvik.vm.heapsize=36m
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
+
 #Disable Skip Validate
 sdm.debug.disable_skip_validate=1
 
@@ -43,6 +48,17 @@ vendor.gralloc.enable_fb_ubwc=1
 vendor.display.disable_skip_validate=1
 
 debug.sf.disable_backpressure=1
+
+# Disable buffer age (b/74534157)
+debug.hwui.use_buffer_age=false
+
+# Properties to improve rendering
+debug.enable.sglscale=1
+debug.egl.hw=1
+debug.sf.disable_hwc=0
+debug.sf.recomputecrop=0
+persist.hwc.ptor.enable=true
+debug.sf.gpu_comp_tiling=1
 
 # ART
 dalvik.vm.image-dex2oat-filter=speed
@@ -119,10 +135,6 @@ telephony.lteOnCdmaDevice=1
 #Simulate sdcard on /data/media
 #
 persist.fuse_sdcard=true
-
-#system prop for wipower support
-ro.bluetooth.emb_wp_mode=true
-ro.bluetooth.wipower=true
 
 #
 #snapdragon value add features

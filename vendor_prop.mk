@@ -19,8 +19,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     sys.vendor.shutdown.waittime=500 \
     ro.build.shutdown_timeout=0 \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp \
-    ro.opengles.version=196610 \
-    vendor.qcom.bluetooth.soc=cherokee \
+    ro.opengles.version=196610
 
 PRODUCT_PROPERTY_OVERRIDES += \
     af.fast_track_multiplier=1 \
@@ -29,6 +28,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.fluence.voicecall=true \
     persist.vendor.audio.fluence.voicerec=false \
     persist.vendor.audio.fluence.speaker=true \
+    persist.vendor.audio.fluence.mode=endfire \
     vendor.audio.tunnel.encode=false \
     persist.vendor.audio.ras.enabled=false \
     vendor.audio.offload.buffer.size.kb=64 \
@@ -70,6 +70,22 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=420
+
+# Bluetooth SoC
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.qcom.bluetooth.soc=cherokee
+
+# Bluetooth WiPower
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.bluetooth.emb_wp_mode=true \
+    ro.vendor.bluetooth.wipower=true
+
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.is_type=5 \
+    persist.camera.googfd.enable=1 \
+    persist.camera.logical.default=1 \
+    persist.camera.gzoom.at=0
 
 # IMS
 PRODUCT_PROPERTY_OVERRIDES += \
